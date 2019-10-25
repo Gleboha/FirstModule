@@ -1,0 +1,7 @@
+<h2><?php echo $this->getSkuString(); ?></h2>
+<form method="POST" name="add_to_cart" action="<?php echo $block->getUrl('secondtask/index/index') ?>">
+    <input name="form_key" type="hidden" value="<?php  echo $block->getFormKey(); ?>" />
+    <input type="text" name="sku">
+    <input type="submit" value="Add to cart">
+</form>
+
