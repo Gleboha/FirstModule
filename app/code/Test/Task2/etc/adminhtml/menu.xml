@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Test_Task2::news" title="News" module="Test_Task2" sortOrder="51" resource="Test_Task2::news"/>
+        <add id="Test_Task2::post" title="Manage News" module="Test_Task2" sortOrder="10" action="test_task2/post" resource="Test_Task2::post" parent="Test_Task2::news"/>
+    </menu>
+</config>

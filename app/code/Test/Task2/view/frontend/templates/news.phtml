@@ -1,0 +1,36 @@
+<?php
+$collection = $this->getNewsCollection();
+?>
+<table class="data-table" id="news-data-table">
+    <caption class="table-caption">News List</caption>
+    <thead>
+    <tr>
+        <th class="col name">Name</th>
+        <th class="col short_description">Short Description</th>
+        <th class="col long_description">Long Description</th>
+        <th class="col created_at">Created At</th>
+        <th class="col updated_at">Updated At</th>
+        <th class="col url">URL</th>
+        <th class="col author">Author</th>
+        <th class="col actions">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($collection as $key => $data): ?>
+        <tr>
+            <td data-th="Name" class="col name"><?php echo $data->getName(); ?></td>
+            <td data-th="ShortDescription" class="col short_description"><?php echo $data->getShortDescription(); ?></td>
+            <td data-th="LongDescription" class="col long_description"><?php echo $data->getLongDescription(); ?></td>
+            <td data-th="Date" class="col created_at"><?php echo $data->getCreatedAt(); ?></td>
+            <td data-th="Date" class="col created_at"><?php echo $data->getUpdatedAt(); ?></td>
+            <td data-th="Url" class="col url"><?php echo $data->getUrl(); ?></td>
+            <td data-th="Author" class="col author"><?php echo $data->getAuthor(); ?></td>
+            <td data-th="Actions" class="col actions">
+                <a href="<?php echo $block->getBaseUrl().'task2/index/view/id/'.$data->getId(); ?>" class="action view">
+                    <span>Detail</span>
+                </a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>

@@ -1,0 +1,31 @@
+<?php
+$singleData = $this->getSingleData();
+?>
+<div>
+    <h3>Name</h3>
+    <p><?php echo $singleData->getName(); ?></p>
+</div>
+<div>
+    <h3>Short Description</h3>
+    <p><?php echo $singleData->getShortDescription(); ?></p>
+</div>
+<div>
+    <h3>Long Description</h3>
+    <p><?php echo $singleData->getLongDescription(); ?></p>
+</div>
+<div>
+    <h3>Created Date</h3>
+    <p><?php echo $singleData->getCreatedAt(); ?></p>
+</div>
+<div>
+    <h3>Updated Date</h3>
+    <p><?php echo $singleData->getUpdatedAt(); ?></p>
+</div>
+<div>
+    <h3>URL</h3>
+    <p><?php echo $singleData->getUrl(); ?></p>
+</div>
+<div>
+    <h3>Author</h3>
+    <p><?php echo $singleData->getAuthor(); ?></p>
+</div>
