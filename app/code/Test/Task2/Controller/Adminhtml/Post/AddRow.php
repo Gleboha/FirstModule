@@ -1,21 +1,11 @@
 <?php
-/**
- * Webkul Grid List Controller.
- * @category  Webkul
- * @package   Webkul_Grid
- * @author    Webkul
- * @copyright Copyright (c) 2010-2017 Webkul Software Private Limited (https://webkul.com)
- * @license   https://store.webkul.com/license.html
- */
+
 namespace Test\Task2\Controller\Adminhtml\Post;
 
 use Magento\Framework\Controller\ResultFactory;
 
 class AddRow extends \Magento\Backend\App\Action
 {
-    /**
-     * @var \Magento\Framework\Registry
-     */
     private $coreRegistry;
 
     private $gridFactory;
@@ -23,21 +13,16 @@ class AddRow extends \Magento\Backend\App\Action
     public function __construct(
         \Magento\Backend\App\Action\Context $context,
         \Magento\Framework\Registry $coreRegistry,
-        \Test\Task2\Model\PostFactory $gridFactory
+        \Test\Task2\Model\PostFactory $postFactory
     ) {
         parent::__construct($context);
         $this->coreRegistry = $coreRegistry;
-        $this->gridFactory = $gridFactory;
+        $this->postFactory = $postFactory;
     }
-
-    /**
-     * Mapped Grid List page.
-     * @return \Magento\Backend\Model\View\Result\Page
-     */
     public function execute()
     {
         $rowId = (int) $this->getRequest()->getParam('id');
-        $rowData = $this->gridFactory->create();
+        $rowData = $this->postFactory->create();
         /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
         if ($rowId) {
             $rowData = $rowData->load($rowId);

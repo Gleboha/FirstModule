@@ -17,12 +17,6 @@ class CollectionFactory
      */
     protected $_instanceName = null;
 
-    /**
-     * Factory constructor
-     *
-     * @param \Magento\Framework\ObjectManagerInterface $objectManager
-     * @param string $instanceName
-     */
     public function __construct(\Magento\Framework\ObjectManagerInterface $objectManager, $instanceName = '\\Test\\Task2\\Model\\ResourceModel\\Post\\Collection')
     {
         $this->_objectManager = $objectManager;

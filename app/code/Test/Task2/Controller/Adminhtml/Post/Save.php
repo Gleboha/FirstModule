@@ -7,16 +7,13 @@ class Save extends \Magento\Backend\App\Action
 {
     var $gridFactory;
 
-    /**
-     * @param \Magento\Backend\App\Action\Context $context
-     * @param \Webkul\Grid\Model\GridFactory $gridFactory
-     */
+
     public function __construct(
         \Magento\Backend\App\Action\Context $context,
-        \Test\Task2\Model\PostFactory $gridFactory
+        \Test\Task2\Model\PostFactory $postFactory
     ) {
         parent::__construct($context);
-        $this->gridFactory = $gridFactory;
+        $this->postFactory = $postFactory;
     }
 
     /**
@@ -31,7 +28,7 @@ class Save extends \Magento\Backend\App\Action
             return;
         }
         try {
-            $rowData = $this->gridFactory->create();
+            $rowData = $this->postFactory->create();
             $rowData->setData($data);
             if (isset($data['id'])) {
                 $rowData->setEntityId($data['id']);
